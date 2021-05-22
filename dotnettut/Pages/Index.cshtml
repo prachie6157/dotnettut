@@ -1,0 +1,36 @@
+﻿@page
+
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Dot Net 1st website </h1>
+
+</div>
+
+
+@using dotnettut.Components
+
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@(await Html.RenderComponentAsync<ProductList>(RenderMode.ServerPrerendered))
+
+<script src="_framework/blazor.server.js"></script>
+
+@*<div class="card-columns">
+    @foreach (var product in Model.Products)
+    {
+
+        <div class="card">
+            <div class="card-img" style="background-image: url('@product.Image');">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">@product.Title</h5>
+            </div>
+        </div>
+    }
+</div>*@
